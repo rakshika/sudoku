@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sudoku</title>
+	<link rel="icon" type="image/png" href="">
+    <link href="css/style.css" rel="stylesheet">
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+	<script src="js/check.js"></script>
+	
+</head>
+<body>
+	<header>SUDOKU</header>
+	<div class="boardcontainer">
+		<div class="board">
+			<div class="smallboard 1">
+				<input type="text"  maxlength="1" value="3" class="numberdiv 00 fixed" id="i00" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 12 fill" id="i01">
+				<input type="text"  maxlength="1" class="numberdiv 02 fill" id="i02">
+				<input type="text"  maxlength="1" value="8" class="numberdiv 10 fixed" id="i10" disabled>
+				<input type="text"  maxlength="1" value="5" class="numberdiv 11 fixed" id="i11" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 12 fill" id="i12">
+				<input type="text"  maxlength="1" value="7" class="numberdiv 20 fixed" id="i20" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 21 fill" id="i21">
+				<input type="text"  maxlength="1" value="4" class="numberdiv 22 fixed" id="i22" disabled>
+			</div>
+			<div class="smallboard 2">
+				<input type="text"  maxlength="1" class="numberdiv 03 fill" id="i03">
+				<input type="text"  maxlength="1" class="numberdiv 04 fill" id="i04">
+				<input type="text"  maxlength="1" value="2" class="numberdiv 05 fixed" id="i05" disabled>
+				<input type="text"  maxlength="1" value="6" class="numberdiv 13 fixed" id="i13" disabled>
+				<input type="text"  maxlength="1" value="7" class="numberdiv 14 fixed" id="i14" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 15 fill" id="i15">
+				<input type="text"  maxlength="1" value="3" class="numberdiv 23 fixed" id="i23" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 24 fill" id="i24">
+				<input type="text"  maxlength="1" class="numberdiv 25 fill" id="i25">
+			</div>
+			<div class="smallboard 3">
+				<input type="text"  maxlength="1" value="4" class="numberdiv 06 fixed" id="i06" disabled>
+				<input type="text"  maxlength="1" value="7" class="numberdiv 07 fixed" id="i07" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 08 fill" id="i08">
+				<input type="text"  maxlength="1" class="numberdiv 16 fill" id="i16">
+				<input type="text"  maxlength="1" value="3" class="numberdiv 17 fixed" id="i17" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 18 fill" id="i18">
+				<input type="text"  maxlength="1" value="2" class="numberdiv 26 fixed" id="i26" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 27 fill" id="i27">
+				<input type="text"  maxlength="1" value="5" class="numberdiv 28 fixed" id="i28" disabled>
+			</div>
+			<div class="smallboard 4">
+				<input type="text"  maxlength="1" class="numberdiv 30 fill" id="i30">
+				<input type="text"  maxlength="1" class="numberdiv 31 fill" id="i31">
+				<input type="text"  maxlength="1" value="3" class="numberdiv 32 fixed" id="i32" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 40 fill" id="i40">
+				<input type="text"  maxlength="1" value="9" class="numberdiv 41 fixed" id="i41" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 42 fill" id="i42">
+				<input type="text"  maxlength="1" class="numberdiv 50 fill" id="i50">
+				<input type="text"  maxlength="1" class="numberdiv 51 fill" id="i51">
+				<input type="text"  maxlength="1" class="numberdiv 52 fill" id="i52">
+			</div>
+			<div class="smallboard 5">
+				<input type="text"  maxlength="1" class="numberdiv 33 fill" id="i33">
+				<input type="text"  maxlength="1" class="numberdiv 34 fill" id="i34">
+				<input type="text"  maxlength="1" value="7" class="numberdiv 35 fixed" id="i35" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 43 fill" id="i43">
+				<input type="text"  maxlength="1" value="1" class="numberdiv 44 fixed" id="i44" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 45 fill" id="i45">
+				<input type="text"  maxlength="1" value="8" class="numberdiv 53 fixed" id="i53" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 54 fill" id="i54">
+				<input type="text"  maxlength="1" class="numberdiv 55 fill" id="i55">
+			</div>
+			<div class="smallboard 6">
+				<input type="text"  maxlength="1" class="numberdiv 36 fill" id="i36">
+				<input type="text"  maxlength="1" class="numberdiv 37 fill" id="i37">
+				<input type="text"  maxlength="1" class="numberdiv 38 fill" id="i38">
+				<input type="text"  maxlength="1" class="numberdiv 46 fill" id="i46">
+				<input type="text"  maxlength="1" value="2" class="numberdiv 47 fixed" id="i47" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 48 fill" id="i48">
+				<input type="text"  maxlength="1" value="6" class="numberdiv 56 fixed" id="i56" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 57 fill" id="i57">
+				<input type="text"  maxlength="1" class="numberdiv 58 fill" id="i58">
+			</div>
+			<div class="smallboard 7">
+				<input type="text"  maxlength="1" value="1" class="numberdiv 60 fixed" id="i60" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 61 fill" id="i61">
+				<input type="text"  maxlength="1" value="8" class="numberdiv 62 fixed" id="i62" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 70 fill" id="i70">
+				<input type="text"  maxlength="1" value="4" class="numberdiv 71 fixed" id="i71" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 72 fill" id="i72">
+				<input type="text"  maxlength="1" class="numberdiv 80 fill" id="i80">
+				<input type="text"  maxlength="1" value="7" class="numberdiv 81 fixed" id="i81" disabled>
+				<input type="text"  maxlength="1" value="5" class="numberdiv 82 fixed" id="i82" disabled>
+			</div>
+			<div class="smallboard 8">
+				<input type="text"  maxlength="1" class="numberdiv 63 fill" id="i63">
+				<input type="text"  maxlength="1" class="numberdiv 64 fill" id="i64">
+				<input type="text"  maxlength="1" value="9" class="numberdiv 65 fixed" id="i65" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 73 fill" id="i73">
+				<input type="text"  maxlength="1" value="8" class="numberdiv 74 fixed" id="i74" disabled>
+				<input type="text"  maxlength="1" value="3" class="numberdiv 75 fixed" id="i75" disabled>
+				<input type="text"  maxlength="1" value="2" class="numberdiv 83 fixed" id="i83" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 84 fill" id="i84">
+				<input type="text"  maxlength="1" class="numberdiv 85 fill" id="i85">
+			</div>
+			<div class="smallboard 9">
+				<input type="text"  maxlength="1" value="5" class="numberdiv 66 fixed" id="i66" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 67 fill" id="i67">
+				<input type="text"  maxlength="1" value="2" class="numberdiv 68 fixed" id="i68" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 76 fill" id="i76">
+				<input type="text"  maxlength="1" value="1" class="numberdiv 77 fixed" id="i77" disabled>
+				<input type="text"  maxlength="1" value="9" class="numberdiv 78 fixed" id="i78" disabled>
+				<input type="text"  maxlength="1" class="numberdiv 86 fill" id="i86">
+				<input type="text"  maxlength="1" class="numberdiv 87 fill" id="i87">
+				<input type="text"  maxlength="1" value="6" class="numberdiv 88 fixed" id="i88" disabled>
+			</div>
+		</div>
+		<div class="finish">
+			<button class="finishBtn">FINISH</button><br>
+		</div>
+		<p id="msg"></p>
+	</div>
+	<p style="padding-top:80px;">TIMER!!<br>What has to be added?<br>1. Initially load more than one puzzle statically.<br>2. Generate puzzles dynamically and load them. 
+</body>
+</html>
